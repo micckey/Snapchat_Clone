@@ -47,5 +47,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+    <string>Snapchat requires camera permissions to work properly</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Snapchat requires microphone permissions to work properly</string>
 </dict>
 </plist>

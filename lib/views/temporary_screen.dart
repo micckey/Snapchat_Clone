@@ -7,7 +7,10 @@ class TemporaryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: color,
+      decoration: BoxDecoration(
+        color: color,  
+        borderRadius: BorderRadius.circular(12)
+      ),      
     );
   }
 }
