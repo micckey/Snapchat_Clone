@@ -3,31 +3,39 @@ import 'package:flutter/material.dart';
 import 'package:snapchat/widgets/custom_icon.dart';
 
 class TopBar extends StatelessWidget {
-  const TopBar({Key? key}) : super(key: key);
+  const TopBar({Key? key, required this.isCameraPage, required this.text}) : super(key: key);
+  final bool isCameraPage;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
+    Color color = isCameraPage ? Colors.white : Colors.grey;
+
     return Stack(
+      alignment: Alignment.center,
       children: [
         Positioned(
             top: 40,
             left: 10,
-            child: CustomIcon(child: Image.asset('assets/images/bitmoji.png'))
+            child: CustomIcon(isCameraPage: isCameraPage, child: Image.asset('assets/images/bitmoji.png'))
         ),
-        const Positioned(
+        Positioned(
             top: 40,
             left: 65,
-            child: CustomIcon(child: Icon(Icons.search, color: Colors.white, size: 30))
+            child: CustomIcon(isCameraPage: isCameraPage, child: Icon(Icons.search, color: color, size: 30))
         ),
-        const Positioned(
+        Positioned(
+            top: 50,
+            child: Text(text, style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),)),
+        Positioned(
             top: 40,
             right: 67,
-            child: CustomIcon(child: Icon(Icons.person_add, color: Colors.white, size: 28))
+            child: CustomIcon(isCameraPage: isCameraPage, child: Icon(Icons.person_add, color: color, size: 28))
         ),
         Positioned(
             top: 40,
             right: 12,
-            child: Container(
+            child: isCameraPage? Container(
               width: 47,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
@@ -35,26 +43,26 @@ class TopBar extends StatelessWidget {
               child: Column(
                 children: [
                   const SizedBox(height: 10),
-                  const Icon(Icons.flip_camera_android, color: Colors.white, size: 28),
+                  Icon(Icons.flip_camera_android, color: color, size: 28),
                   const SizedBox(height: 15),
-                  const Icon(Icons.flash_off, color: Colors.white, size: 28),
+                  Icon(Icons.flash_off, color: color, size: 28),
                   const SizedBox(height: 15),
-                  const Icon(CupertinoIcons.moon, color: Colors.white, size: 28),
+                  Icon(CupertinoIcons.moon, color: color, size: 28),
                   const SizedBox(height: 15),
-                  const Icon(CupertinoIcons.play_rectangle, color: Colors.white, size: 28),
+                  Icon(CupertinoIcons.play_rectangle, color: color, size: 28),
                   const SizedBox(height: 15),
                   Container(
                     width: 35,
                       height: 35,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                            color: Colors.white.withOpacity(0.4)
+                            color: color.withOpacity(0.4)
                       ),
-                      child: const Icon(Icons.add, color: Colors.white, size: 28)),
+                      child: Icon(Icons.add, color: color, size: 28)),
                   const SizedBox(height: 10),
                 ],
               ),
-            )
+            ) : CustomIcon(isCameraPage: isCameraPage, child: Icon(Icons.more_horiz, color: color, size: 28,))
         ),
       ],
     );

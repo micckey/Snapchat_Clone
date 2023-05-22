@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:snapchat/views/camera_screen.dart';
+import 'package:snapchat/views/stories_screen.dart';
 import 'package:snapchat/views/temporary_screen.dart';
 
 
@@ -107,8 +108,8 @@ class _MainPageState extends State<MainPage> {
         children: <Widget>[
           TemporaryScreen(color: _colors[0]),
           TemporaryScreen(color: _colors[1]),
-          CameraScreen(cameraController: _cameraController),
-          TemporaryScreen(color: _colors[3]),
+          CameraScreen(cameraController: _cameraController, initCamera: initCamera),
+          const StoriesScreen(),
           TemporaryScreen(color: _colors[4]),
         ],
       ),
