@@ -12,7 +12,7 @@ class CustomIcon extends StatelessWidget {
         width: 45,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
-            color: isCameraPage? Colors.black38 : Colors.white70),
+            color: isCameraPage? Colors.black38 : Colors.black12),
         child: Padding(
           padding: const EdgeInsets.all(4.0),
           child: child,

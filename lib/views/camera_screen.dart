@@ -55,11 +55,11 @@ class _CameraScreenState extends State<CameraScreen> {
             bottom: 15,
             child: Row(
               children: [
-                const CustomIcon(child: Icon(Icons.photo_library_outlined, color: Colors.white, size: 26,), isCameraPage: true),
+                const CustomIcon(isCameraPage: true, child: Icon(Icons.photo_library_outlined, color: Colors.white, size: 26,)),
                 const SizedBox(width: 18,),
                 IconButton(onPressed: () {}, icon: const Icon(CupertinoIcons.camera_circle, color: Colors.white, size: 50) ),
                 const SizedBox(width: 18,),
-                const CustomIcon(child: Icon(Icons.tag_faces, color: Colors.white, size: 26,), isCameraPage: true),
+                const CustomIcon(isCameraPage: true, child: Icon(Icons.tag_faces, color: Colors.white, size: 26,)),
               ],
             )
         ),

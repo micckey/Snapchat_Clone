@@ -9,7 +9,7 @@ class TopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color color = isCameraPage ? Colors.white : Colors.grey;
+    Color color = isCameraPage ? Colors.white : Colors.black54;
 
     return Stack(
       alignment: Alignment.center,
